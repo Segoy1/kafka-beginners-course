@@ -25,10 +25,6 @@ public class ConsumerDemo {
 
         // create Producer Properties
         Properties properties = new Properties();
-
-        //connect to localhost
-        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"127.0.0.1:9092");
-
 //        //connect to remote
 //        properties.setProperty("bootstrap.servers","cluster.playground.cdkt.io:9092");
 //        properties.setProperty("security.protocol","SASL_SSL");
@@ -36,7 +32,8 @@ public class ConsumerDemo {
 //                "username=...");
 //        properties.setProperty("sasl.mechanism","PLAIN");
 
-
+        //connect to localhost
+        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"127.0.0.1:9092");
        //create Consumer Config
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
